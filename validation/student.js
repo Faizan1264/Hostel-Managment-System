@@ -29,7 +29,7 @@ module.exports = function validateStudentInput(data) {
     errors.id = "Student Id is Required";
   }
   if (Validator.isEmpty(data.block)) {
-    errors.block = "Block is Required";
+    errors.block = "Hostel is Required";
   }
   if (Validator.isEmpty(data.room)) {
     errors.room = "Room is Required";

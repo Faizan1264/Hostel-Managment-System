@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getCurrentUser } from "../../actions/authActions";
-
+import './Dashboard.css'
 
 // const clean = require("../../img/cleaning.jpg");
 const student = require("../../img/student.jpg");
@@ -20,7 +20,7 @@ class Dashboard extends Component {
     return (
       <div className="mid container">
         <div className="text-center" style={{ fontSize: "25px" }}>
-          Welcome {user.name}!
+          Welcome {user.name} 👏
         </div>
         <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '2rem' }}>
 
@@ -37,7 +37,7 @@ class Dashboard extends Component {
           <div className="card" style={{ width: "18rem", hover: '', height: '22rem' }}>
             <img src={bedRoom} className="card-img-top" alt="Cleaning" />
             <div className="card-body">
-              <h5 className="card-title">Room Repair/Cleaning Status</h5>
+              <h5 className="card-title">Cleaning and Repair Assistance</h5>
               <a href="/block">
                 Add Room Repair/Cleaning or Check Info
                 </a>

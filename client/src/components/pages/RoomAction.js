@@ -5,7 +5,7 @@ import classnames from "classnames";
 import { createRoomAction, getRoomAction } from '../../actions/roomActions';
 import axios from 'axios';
 import ReactLoading from 'react-loading';
-
+import './RoomAction.css'
 class RoomAction extends Component {
     constructor(props) {
         super(props);
@@ -90,7 +90,7 @@ class RoomAction extends Component {
                     <div className="row">
                         <div className="col">
                             <label htmlFor="id">Room No.</label>
-                            <input type="text" id="id" placeholder="Room No."
+                            <input type="text" id="id" placeholder="Please enter Room No. with Hostel name"
                                 className={classnames("form-control", {
                                     "is-invalid": errors.id
                                 })}
@@ -147,15 +147,15 @@ class RoomAction extends Component {
                             )}
                         </div>
                         <div className="col">
-                            <label htmlFor="exampleFormControlSelect1">Room Occupancy</label>
+                            <label htmlFor="exampleFormControlSelect1">Set Priority Level</label>
                             <select className={classnames("form-control", {
                                 "is-invalid": errors.gender
                             })}
                                 id="exampleFormControlSelect1" onChange={this.onChange} value={this.state.gender}
                                 name="gender"
                             >   <option value="" defaultValue disabled>Select</option>
-                                <option>GIRL</option>
-                                <option>BOY</option>
+                                <option>Urgent</option>
+                                <option>Routine</option>
                             </select>
                             {errors.gender && (
                                 <div className="invalid-tooltip">{errors.gender}</div>
@@ -176,7 +176,8 @@ class RoomAction extends Component {
                                 <th scope="col">Action</th>
                                 <th scope="col">Date and Time</th>
                                 <th scope="col">Incharge</th>
-                                <th scope="col">Room Occupancy</th>
+                                {/* <th scope="col">Room Occupancy</th> */}
+                                <th scope="col">Set Priority Level</th>
                                 <th scope="col">Delete?</th>
                             </tr>
                         </thead>

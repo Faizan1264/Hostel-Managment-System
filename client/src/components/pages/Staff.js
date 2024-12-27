@@ -5,7 +5,7 @@ import classnames from "classnames";
 import { createStaffDetails, getStaffDetails } from '../../actions/staffActions';
 import axios from 'axios';
 import ReactLoading from 'react-loading';
-
+import './Staff.css'
 class Staff extends Component {
     constructor(props) {
         super(props);

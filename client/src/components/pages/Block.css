@@ -1,0 +1,86 @@
+/* General container styling */
+.mid.container {
+    margin-top: 50px; /* Add spacing from the top */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  /* Card container */
+  .mid.container > div {
+    display: flex;
+    flex-wrap: wrap; /* Wrap cards for responsiveness */
+    gap: 20px; /* Spacing between cards */
+    justify-content: center; /* Center the cards */
+  }
+  
+  /* Individual card styling */
+  .card {
+    width: 15rem; /* Slightly larger width for better aesthetics */
+    border: 1px solid #ddd; /* Light border for contrast */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 10px; /* Rounded corners for a modern look */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff; /* White background for clarity */
+  }
+  
+  .card:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* More prominent shadow on hover */
+  }
+  
+  /* Card body */
+  .card-body {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Card title */
+  .card-title {
+    font-size: 1.2rem;
+    color: #343a40; /* Dark gray for the title */
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  
+  /* Card link text */
+  .card-text {
+    cursor: pointer;
+    color: #007bff; /* Blue for clickable links */
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .card-text:hover {
+    color: #0056b3; /* Darker blue for hover effect */
+    text-decoration: underline;
+  }
+  
+  /* Responsiveness for smaller screens */
+  @media (max-width: 768px) {
+    .card {
+      width: 100%; /* Full width for smaller screens */
+    }
+  
+    .mid.container > div {
+      gap: 15px; /* Adjust spacing between cards */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .card-body {
+      padding: 15px; /* Reduce padding on small screens */
+    }
+  
+    .card-title {
+      font-size: 1rem; /* Smaller font size for compact layout */
+    }
+  
+    .card-text {
+      font-size: 0.9rem; /* Adjust font size for better readability */
+    }
+  }
+  

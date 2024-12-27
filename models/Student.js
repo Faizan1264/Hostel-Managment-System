@@ -15,22 +15,36 @@ const StudentSchema = new Schema({
   batch: {
     type: Number,
     required: true,
-    min: 2016,
-    max: 2020
+    min: 2020,
+    max: 2024
 
   },
+  // id: {
+  //   type: String,
+  //   unique: true,
+  // },
   id: {
     type: String,
     unique: true,
+    required: true,
+    match: /^[a-zA-Z]{2}\d{4}$/i,  // Case-insensitive regex for two letters followed by four digits
   },
   room: {
     type: String,
   },
+  // block: {
+  //   type: String,
+  //   // enum: ['A', 'B', 'C', 'D'],
+  //   enum: ['Saifi', 'Hali', 'MMA', 'Amin'],
+  //   trim: true,
+  //   required: true,
+  // },
   block: {
     type: String,
-    enum: ['A', 'B', 'C', 'D'],
+    enum: ['saifi', 'hali', 'mma', 'amin'], // Lowercase enum values
     trim: true,
     required: true,
+    set: value => value.toLowerCase(), // Convert input to lowercase
   },
   isAvailable: {
     type: Boolean,

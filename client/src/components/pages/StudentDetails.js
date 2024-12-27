@@ -135,8 +135,8 @@ class StudentDetails extends Component {
                                 <div className="invalid-tooltip">{errors.email}</div>
                             )}
                         </div>
-                        <div className="col">
-                            <label htmlFor="id">ID</label>
+                        {/* <div className="col">
+                            <label htmlFor="id">Enrolment NO</label>
                             <input type="number" id="id" placeholder="ID"
                                 className={classnames("form-control", {
                                     "is-invalid": errors.id
@@ -148,10 +148,24 @@ class StudentDetails extends Component {
                             {errors.id && (
                                 <div className="invalid-tooltip">{errors.id}</div>
                             )}
-                        </div>
+                        </div> */}
                         <div className="col">
-                            <label htmlFor="block">Block</label>
-                            <input type="text" id="block" placeholder="Block"
+    <label htmlFor="id">Enrolment NO</label>
+    <input type="text" id="id" placeholder="Enrolment No" // Changed type to "text"
+        className={classnames("form-control", {
+            "is-invalid": errors.id
+        })}
+        onChange={this.onChange}
+        name="id"
+        value={this.state.id}
+    />
+    {errors.id && (
+        <div className="invalid-tooltip">{errors.id}</div>
+    )}
+</div>
+                        <div className="col">
+                            <label htmlFor="block">Hostels</label>
+                            <input type="text" id="block" placeholder="Hostels"
                                 className={classnames("form-control", {
                                     "is-invalid": errors.block
                                 })}
@@ -205,7 +219,7 @@ class StudentDetails extends Component {
                                 <th scope="col">Name</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">ID</th>
-                                <th scope="col">Block</th>
+                                <th scope="col">Hostels</th>
                                 <th scope="col">Room No.</th>
                                 <th scope="col">Gender</th>
                                 <th scope="col">Leave Status</th>

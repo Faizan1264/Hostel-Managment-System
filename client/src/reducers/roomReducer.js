@@ -1,3 +1,4 @@
+
 import { GET_ROOM_ACTION, ENABLE_ROOM_ACTION_LOADING, DISABLE_ROOM_ACTION_LOADING } from "../actions/types";
 
 const initialState = {
@@ -5,7 +6,8 @@ const initialState = {
     loading: false,
 };
 
-export default function (state = initialState, action) {
+// Named export instead of default export
+const roomReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_ROOM_ACTION:
             return {
@@ -16,13 +18,15 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 loading: true,
-            }
+            };
         case DISABLE_ROOM_ACTION_LOADING:
             return {
                 ...state,
                 loading: false,
-            }
+            };
         default:
             return state;
     }
-}
+};
+
+export default roomReducer; // Exporting named reducer

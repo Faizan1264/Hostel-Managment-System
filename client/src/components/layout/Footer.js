@@ -1,9 +1,10 @@
 import React from "react";
+import './Footer.css'
 
 export default function Footer() {
   return (
     <footer className="bg-dark text-white mt-5 pd-4 text-center">
-      Copyright &copy; {new Date().getFullYear()} <a href="https://github.com/starkblaze01/Hostel-Management#team-members">Team Web Tech</a>
+      Copyright &copy; {new Date().getFullYear()} <a href="https://github.com/Faizan1264">MD FAIZAN ALAM</a>
     </footer>
   );
 }

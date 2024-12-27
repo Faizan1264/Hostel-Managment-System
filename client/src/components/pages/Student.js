@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classnames from "classnames";
 import axios from 'axios';
 import ReactLoading from 'react-loading';
+// import './Student.css'
 
 class Student extends Component {
     constructor(props) {
@@ -42,7 +43,25 @@ class Student extends Component {
                 console.log(err)
             );
         }
-        else if (this.state.findBy === 'room') {
+        if (this.state.findBy === 'id') {
+            // Validate ID format
+            const idPattern = /^[a-zA-Z]{2}\d{4}$/i;
+            if (!idPattern.test(this.state.val)) {
+                this.setState({ loading: false });
+                return alert("Invalid ID format. Please use two letters followed by four digits (e.g., GK1004).");
+            }
+
+            // Fetch by ID
+            const res = await axios.get(`/api/student/id/${this.state.val}`);
+            this.setState({ data: res.data, loading: false });
+            console.log(res);
+
+            if (!res.data || res.data.length === 0) {
+                alert("Not Found");
+            }
+        } 
+    
+         else if (this.state.findBy === 'room') {
             await axios.get(`/api/student/room/${this.state.val}`).then((res) => {
                 this.setState({ data: res, loading: false });
                 console.log(res);
@@ -125,9 +144,9 @@ class Student extends Component {
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <div className="card" style={{ width: "12rem" }}>
                         <div className="card-body">
-                            <h5 className="card-title">B.Tech-2016</h5>
-                            <h6 className="card-subtitle mb-2 text-muted">CS & IT</h6>
-                            <p onClick={() => this.onBatchSelect('2016')} className="card-text" style={{
+                            <h5 className="card-title">SESSION 2024-2025</h5>
+                            <h6 className="card-subtitle mb-2 text-muted">ALL COURSES</h6>
+                            <p onClick={() => this.onBatchSelect('2024')} className="card-text" style={{
                                 cursor: 'pointer',
                                 color: '#00a4eb'
                             }}>Add or Check Info</p>
@@ -135,9 +154,9 @@ class Student extends Component {
                     </div>
                     <div className="card" style={{ width: "12rem" }}>
                         <div className="card-body">
-                            <h5 className="card-title">B.Tech-2017</h5>
-                            <h6 className="card-subtitle mb-2 text-muted">CS & IT</h6>
-                            <p onClick={() => this.onBatchSelect('2017')} className="card-text" style={{
+                            <h5 className="card-title">SESSION 2023 - 2024</h5>
+                            <h6 className="card-subtitle mb-2 text-muted">ALL COURSES</h6>
+                            <p onClick={() => this.onBatchSelect('2023')} className="card-text" style={{
                                 cursor: 'pointer',
                                 color: '#00a4eb'
                             }}>Add or Check Info</p>
@@ -145,9 +164,9 @@ class Student extends Component {
                     </div>
                     <div className="card" style={{ width: "12rem" }}>
                         <div className="card-body">
-                            <h5 className="card-title">B.Tech-2018</h5>
-                            <h6 className="card-subtitle mb-2 text-muted">CS & IT</h6>
-                            <p onClick={() => this.onBatchSelect('2018')} className="card-text" style={{
+                            <h5 className="card-title">SESSION 2022 - 2023</h5>
+                            <h6 className="card-subtitle mb-2 text-muted">ALL COURSES</h6>
+                            <p onClick={() => this.onBatchSelect('2022')} className="card-text" style={{
                                 cursor: 'pointer',
                                 color: '#00a4eb'
                             }}>Add or Check Info</p>
@@ -155,9 +174,9 @@ class Student extends Component {
                     </div>
                     <div className="card" style={{ width: "12rem" }}>
                         <div className="card-body">
-                            <h5 className="card-title">B.Tech-2019</h5>
-                            <h6 className="card-subtitle mb-2 text-muted">CS & IT</h6>
-                            <p onClick={() => this.onBatchSelect('2019')} className="card-text" style={{
+                            <h5 className="card-title">SESSION 2021 - 2022</h5>
+                            <h6 className="card-subtitle mb-2 text-muted">ALL COURSES</h6>
+                            <p onClick={() => this.onBatchSelect('2021')} className="card-text" style={{
                                 cursor: 'pointer',
                                 color: '#00a4eb'
                             }}>Add or Check Info</p>
@@ -199,7 +218,7 @@ class Student extends Component {
                                 <th scope="col">Name</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">ID</th>
-                                <th scope="col">Block</th>
+                                <th scope="col">Hostels</th>
                                 <th scope="col">Room No.</th>
                                 <th scope="col">Gender</th>
                                 <th scope="col">Leave Status</th>

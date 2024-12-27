@@ -1,0 +1,115 @@
+/* Container Styling */
+.mid.container {
+    margin-top: 50px;
+    text-align: center;
+  }
+  
+  /* Welcome Message */
+  .mid.container .text-center {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #4a4a4a; /* Dark gray for contrast */
+    margin-bottom: 20px;
+  }
+  
+  /* Cards Container */
+  .mid.container > div {
+    display: flex;
+    flex-wrap: wrap; /* Enable wrapping for smaller screens */
+    gap: 20px; /* Add spacing between cards */
+    justify-content: center; /* Center align the cards */
+    align-items: flex-start;
+  }
+  
+  /* Individual Card Styling */
+  .card {
+    width: 18rem;
+    height: 24rem; /* Increased height for better alignment */
+    border: 1px solid #ddd; /* Subtle border for contrast */
+    border-radius: 10px; /* Rounded corners for modern design */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Prevent content overflow */
+    background-color: #fff; /* Clean white background */
+  }
+  
+  .card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Prominent shadow on hover */
+  }
+  
+  /* Card Image */
+  .card-img-top {
+    height: 12rem;
+    object-fit: cover; /* Maintain image proportions */
+    border-bottom: 1px solid #ddd; /* Separate image from content */
+  }
+  
+  /* Card Content */
+  .card-body {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+    color: #343a40; /* Dark gray for titles */
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  /* Links inside Cards */
+  .card-text,
+  .card-body a {
+    font-size: 1rem;
+    color: #007bff; /* Standard blue for links */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease;
+  }
+  
+  .card-body a:hover {
+    color: #0056b3; /* Darker blue for hover effect */
+    text-decoration: underline;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 992px) {
+    .card {
+      width: 16rem;
+      height: 22rem;
+    }
+  
+    .card-img-top {
+      height: 10rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .card {
+      width: 100%; /* Full-width for smaller screens */
+      height: auto; /* Adjust height dynamically */
+    }
+  
+    .card-img-top {
+      height: auto; /* Allow the image to resize naturally */
+    }
+  
+    .card-title {
+      font-size: 1rem;
+    }
+  
+    .card-body a {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .mid.container .text-center {
+      font-size: 1.5rem; /* Adjust welcome text size for mobile */
+    }
+  
+    .card-title {
+      font-size: 0.95rem; /* Slightly smaller font size */
+    }
+  }
+  

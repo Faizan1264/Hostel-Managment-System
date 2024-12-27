@@ -1,10 +1,10 @@
-img {
+ /* img {
   width: 100%;
 }
 
 .mid {
   min-height: 100vh;
-}
+} */
 
 .landing {
   position: relative;
@@ -16,7 +16,7 @@ img {
   margin-bottom: -50px;
 }
 
-.landing-inner {
+/* .landing-inner {
   padding-top: 80px;
 }
 
@@ -40,4 +40,4 @@ img {
 
 .form-control::placeholder {
   color: #bbb !important;
-}
+}    */

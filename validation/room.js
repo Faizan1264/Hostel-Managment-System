@@ -1,11 +1,12 @@
 const Validator = require("validator");
 const isEmpty = require("./is-empty");
-const mongoose = require("mongoose")
+// const mongoose = require("mongoose")
 
 const validateRoomInput = data => {
   const errors = {};
-  const blocks = ['A', 'B', 'C', 'D'];
-  const genders = ['BOY', 'GIRL'];
+  // const blocks = ['A', 'B', 'C', 'D'];
+  const blocks = ['MM HALL', 'SULAIMAN HALL', 'HABIB HALL', 'VM HALL'];
+  const genders = ['Urgent', 'Routine'];
   const work = ['CLEANING', 'REPAIR'];
   const { id, block, gender, type, incharge, time } = data
 
@@ -22,11 +23,12 @@ const validateRoomInput = data => {
   }
 
   if (Validator.isEmpty(block) || !blocks.includes(block)) {
-    errors.block = "Room block is missing or invalid";
+    // errors.block = "Room block is missing or invalid";
+    errors.block = "Hostel name is missing or invalid";
   }
 
   if (Validator.isEmpty(gender) || !genders.includes(gender)) {
-    errors.gender = "Occupancy is missing or invalid";
+    errors.gender = "Select Priority Level is missing or invalid";
   }
 
   if (Validator.isEmpty(type) || !work.includes(type)) {

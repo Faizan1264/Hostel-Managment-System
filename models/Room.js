@@ -14,7 +14,7 @@ const RoomSchema = new Schema({
   },
   block: {
     type: String,
-    enum: ['A', 'B', 'C', 'D'],
+    enum: ['MM HALL', 'SULAIMAN HALL', 'HABIB HALL', 'VM HALL'],
     required: true,
     trim: true
   },
@@ -29,7 +29,8 @@ const RoomSchema = new Schema({
   },
   gender: {
     type: String,
-    enum: ['BOY', 'GIRL'],
+    // enum: ['BOY', 'GIRL'],
+     enum: ['Urgent', 'Routine'],
     required: true,
   }
 });

@@ -1,2 +1,37 @@
+# node_modules
+# /config/keys_dev.js
+# Node.js dependencies
 node_modules
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+
+# Directory for local environment configuration
 /config/keys_dev.js
+
+# Build outputs
+dist/
+build/
+
+# Dependency directories
+client/node_modules
+client/build
+
+# IDE files
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+node_modules/
+.env
+dist/
+build/
+.DS_Store
+*.log

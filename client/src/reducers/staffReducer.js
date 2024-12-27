@@ -1,3 +1,4 @@
+
 import { GET_STAFF_DETAILS, ENABLE_STAFF_LOADING, DISABLE_STAFF_LOADING } from "../actions/types";
 
 const initialState = {
@@ -5,7 +6,8 @@ const initialState = {
     loading: false,
 };
 
-export default function (state = initialState, action) {
+// Named export instead of default export
+const staffReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_STAFF_DETAILS:
             return {
@@ -16,13 +18,15 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 loading: true,
-            }
+            };
         case DISABLE_STAFF_LOADING:
             return {
                 ...state,
                 loading: false,
-            }
+            };
         default:
             return state;
     }
-}
+};
+
+export default staffReducer; // Exporting named reducer

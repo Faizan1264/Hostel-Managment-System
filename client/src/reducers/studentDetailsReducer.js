@@ -1,3 +1,4 @@
+
 import { GET_STUDENT_DETAILS, ENABLE_STUDENT_DETAILS_LOADING, DISABLE_STUDENT_DETAILS_LOADING } from "../actions/types";
 
 const initialState = {
@@ -5,7 +6,8 @@ const initialState = {
     loading: false,
 };
 
-export default function (state = initialState, action) {
+// Named export instead of default export
+const studentReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_STUDENT_DETAILS:
             return {
@@ -16,13 +18,15 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 loading: true,
-            }
+            };
         case DISABLE_STUDENT_DETAILS_LOADING:
             return {
                 ...state,
                 loading: false,
-            }
+            };
         default:
             return state;
     }
-}
+};
+
+export default studentReducer; // Exporting named reducer

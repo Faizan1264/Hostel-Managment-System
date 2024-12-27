@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { PropTypes } from "prop-types";
 import { connect } from "react-redux";
+import './Home.css'
 
 class Home extends Component {
   componentDidMount() {
@@ -16,7 +17,7 @@ class Home extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-12 text-center">
-                <h1 className="display-3 mb-4">Hostel-Management</h1>
+                <h1 className="display-3 mb-4">AMU Hostel Management</h1>
                 <p className="lead"></p>
                 <hr />
                 <Link to="/register" className="btn btn-lg btn-info mr-2">
